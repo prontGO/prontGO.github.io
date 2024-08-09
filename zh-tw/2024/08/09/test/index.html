@@ -265,6 +265,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -438,6 +439,26 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+</script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'Ov23li8XVlvdhdB5tXKf',
+      clientSecret: '164b175f3affe012066a0910e163c7287ba2b444',
+      repo        : 'prontGO.github.io',
+      owner       : 'prontGO',
+      admin       : ['prontGO'],
+      id          : '948db59d0ddd6407a8acc4e428b8cfe4',
+        language: 'zh-TW',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script>
 
 </body>
