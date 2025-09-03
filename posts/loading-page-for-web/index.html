@@ -1,1583 +1,281 @@
-<!DOCTYPE html>
-<html lang="zh-tw" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head>
-  <meta charset="utf-8" />
-  
-  <meta http-equiv="content-language" content="zh-tw" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  
-  <title>如何製作各種網頁載入畫面 &middot; Pront Change Log</title>
-  <meta name="title" content="如何製作各種網頁載入畫面 &middot; Pront Change Log" />
-  
-  
-  <meta name="keywords" content="程式設計, 網頁開發, 載入畫面, " />
-  
-  
-  <link rel="canonical" href="https://prontgo.github.io/posts/loading-page-for-web/" />
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c9a53482b3b07d602d5dfae43a74abd7be1b52ece11434484cb953eaf4f705009e5b47bd4016533741be2b1067bc560917946917f0bb6ba6e5b495b28193cb96.css"
-    integrity="sha512-yaU0grOwfWAtXfrkOnSr174bUuzhFDRITLlT6vT3BQCeW0e9QBZTN0G&#43;KxBnvFYJF5RpF/C7a6bltJWygZPLlg==" />
-  
-  
-  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
-    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.700c68ced6ecd1ce7e26bb8477435b70302e309815080ee5975c308b2030021fb2febf06550bed73e27b5c8feac2526b9061f74d46ff72d939dad11fcabc5963.js"
-    integrity="sha512-cAxoztbs0c5&#43;JruEd0NbcDAuMJgVCA7ll1wwiyAwAh&#43;y/r8GVQvtc&#43;J7XI/qwlJrkGH3TUb/ctk52tEfyrxZYw==" data-copy="" data-copied=""></script>
-  
-  
-  
-  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
-  
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:url" content="https://prontgo.github.io/posts/loading-page-for-web/">
-  <meta property="og:site_name" content="Pront Change Log">
-  <meta property="og:title" content="如何製作各種網頁載入畫面">
-  <meta property="og:locale" content="zh_tw">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-08-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-08-10T00:00:00+00:00">
-    <meta property="article:tag" content="程式設計">
-    <meta property="article:tag" content="網頁開發">
-    <meta property="article:tag" content="載入畫面">
-    <meta property="og:image" content="https://prontgo.github.io/posts/loading-page-for-web/feature.jpg">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://prontgo.github.io/posts/loading-page-for-web/feature.jpg">
-  <meta name="twitter:title" content="如何製作各種網頁載入畫面">
-
-  
-  <script type="application/ld+json">
-  [{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "articleSection": "Posts",
-    "name": "如何製作各種網頁載入畫面",
-    "headline": "如何製作各種網頁載入畫面",
-    
-    
-    "inLanguage": "zh-tw",
-    "url" : "https:\/\/prontgo.github.io\/posts\/loading-page-for-web\/",
-    "author" : {
-      "@type": "Person",
-      "name": "Pront"
-    },
-    "copyrightYear": "2025",
-    "dateCreated": "2025-08-10T00:00:00\u002b00:00",
-    "datePublished": "2025-08-10T00:00:00\u002b00:00",
-    
-    "dateModified": "2025-08-10T00:00:00\u002b00:00",
-    
-    "keywords": ["程式設計","網頁開發","載入畫面"],
-    
-    "mainEntityOfPage": "true",
-    "wordCount": "703"
-  }]
-  </script>
-
-
-  
-  
-  <meta name="author" content="Pront" />
-  
-  
-  
-
-<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
-
-
-
-
-
-
-
-
-
-
-
-<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.8fee1bb91734542a6701c61b7be516ff2eb2df248bf4e4591aacc8f4e9df40c7ca9e9c0b3f657b166f5f13e69a8fb50a139b3babcef20aeeea18f0fbcd4169fb.css" integrity="sha512-j&#43;4buRc0VCpnAcYbe&#43;UW/y6y3ySL9ORZGqzI9OnfQMfKnpwLP2V7Fm9fE&#43;aaj7UKE5s7q87yCu7qGPD7zUFp&#43;w==" />
-
-
-<script defer src="/lib/katex/katex.min.8c68eaeb75cfdcfac071717a969e1b9d9230ad52c6a2ac21ff846eaf6a258364cbb79e5e3552e32c280faeb4f4eda4d7c5bd1492e30a961c737e1e5305300281.js" integrity="sha512-jGjq63XP3PrAcXF6lp4bnZIwrVLGoqwh/4Rur2olg2TLt55eNVLjLCgPrrT07aTXxb0UkuMKlhxzfh5TBTACgQ=="></script>
-
-
-<script defer src="/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac&#43;zBvZzgDJzDQ=="
-  onload="renderMathInElement(document.body);"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4HTQPYFHW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R4HTQPYFHW');
-</script>
-
-
-
-  
-  
-  <meta name="theme-color"/>
-  
-  
-</head>
-<body
-  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
-  <div id="the-top" class="absolute flex self-center">
-    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
-      href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>快轉到主要內容</a>
-  </div>
-  
-  
-  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
-    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
-    
-    <div class="flex flex-1 items-center justify-between">
-        <nav class="flex space-x-3">
-
-            
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Pront Change Log</a>
-            
-
-        </nav>
-        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
-
-            
-            
-            
-  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-    <p class="text-base font-medium" title="Posts">
-        全部文章
-    </p>
-</a>
-
-
-
-            
-            
-  <a href="/search/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-    <p class="text-base font-medium" title="搜尋">
-        搜尋
-    </p>
-</a>
-
-
-
-            
-            
-  <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-    <p class="text-base font-medium" title="Categories">
-        分類
-    </p>
-</a>
-
-
-
-            
-            
-  <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-    <p class="text-base font-medium" title="Tags">
-        標籤
-    </p>
-</a>
-
-
-
-            
-            
-
-            
-
-
-            
-
-
-            
-            
-            <div
-                class=" flex items-center">
-                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-                    <div class="flex items-center justify-center dark:hidden">
-                        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
-
-  </span>
-
-
-                    </div>
-                    <div class="items-center justify-center hidden dark:flex">
-                        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
-
-  </span>
-
-
-                    </div>
-                </button>
-            </div>
-            
-
-        </nav>
-        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
-
-            <span></span>
-
-            
-
-
-            
-
-            
-            
-            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
-                <div class="flex items-center justify-center dark:hidden">
-                    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
-
-  </span>
-
-
-                </div>
-                <div class="items-center justify-center hidden dark:flex">
-                    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
-
-  </span>
-
-
-                </div>
-            </button>
-            
-
-        </div>
-    </div>
-    <div class="-my-2 md:hidden">
-
-        <label id="menu-button" class="block">
-            
-            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
-                
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
-
-  </span>
-
-
-            </div>
-            <div id="menu-wrapper" style="padding-top:5px;"
-                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
-                <ul
-                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
-
-                    <li id="menu-close-button">
-                        <span
-                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
-
-  </span>
-
-</span>
-                    </li>
-
-                    
-
-                    
-  <li class="mt-1">
-    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-        
-        <p class="text-bg font-bg" title="Posts">
-            全部文章
-        </p>
-    </a>
-</li>
-
-
-
-
-                    
-
-                    
-  <li class="mt-1">
-    <a href="/search/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-        
-        <p class="text-bg font-bg" title="搜尋">
-            搜尋
-        </p>
-    </a>
-</li>
-
-
-
-
-                    
-
-                    
-  <li class="mt-1">
-    <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-        
-        <p class="text-bg font-bg" title="Categories">
-            分類
-        </p>
-    </a>
-</li>
-
-
-
-
-                    
-
-                    
-  <li class="mt-1">
-    <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-        
-        <p class="text-bg font-bg" title="Tags">
-            標籤
-        </p>
-    </a>
-</li>
-
-
-
-
-                    
-
-                </ul>
-                
-                
-
-            </div>
-        </label>
-    </div>
-</div>
-
-
-
-
-<script>
-    (function () {
-        var $mainmenu = $('.main-menu');
-        var path = window.location.pathname;
-        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
-            $(e).children('p').addClass('active');
-        });
-    })();
-</script>
-
-
-  
-  <div class="relative flex flex-col grow">
-    <main id="main-content" class="grow">
-      
-
-
-<article>
-  
-  
-  
-  
-  
-  
-
-        
-        <figure>
-            <img class="w-full rounded-lg single_hero_round nozoom" alt="如何製作各種網頁載入畫面" width="1200" height="800" src="/posts/loading-page-for-web/feature_hu_ed5fb5bcbad353b.jpg">
-            
-        </figure>
-        
-    
-  
-  
-
-  <header id="single_header" class="mt-5 max-w-prose">
-    
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      如何製作各種網頁載入畫面
-    </h1>
-    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
-      
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-08-10T00:00:00&#43;00:00">2025年8月10日</time><span class="px-2 text-primary-500">&middot;</span><span>703 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">4 分鐘</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%B6%B2%E9%A0%81%E9%96%8B%E7%99%BC/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    網頁開發
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    程式設計
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%B6%B2%E9%A0%81%E9%96%8B%E7%99%BC/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    網頁開發
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E8%BC%89%E5%85%A5%E7%95%AB%E9%9D%A2/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    載入畫面
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-    </div>
-
-    
-    
-    
-    
-    
-
-    
-
-    
-
-      
-        
-        
-<div class="flex author">
-  
-    
-    
-      
-    
-    
-      
-        
-      
-      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-      alt="Pront" src="/me_hu_759e6afa3b72bfc.jpeg" />
-    
-  
-  <div class="place-self-center">
-    
-    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-      作者
-    </div>
-    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
-      Pront
-    </div>
-    
-    
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Hello World🌍!</div>
-    
-    <div class="text-2xl sm:text-lg">
-</div>
-  </div>
-</div>
-
-      
-
-      
-
-      
-      <div class="mb-5"></div>
-      
-      <link rel="stylesheet" href="/css/article.css">
-
-    
-
-  </header>
-
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    目錄
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#旋轉載入動畫spinner">旋轉載入動畫（Spinner）</a>
-      <ul>
-        <li><a href="#旋轉載入器簡單">旋轉載入器（簡單）</a></li>
-        <li><a href="#旋轉載入器進階">旋轉載入器（進階）</a></li>
-      </ul>
-    </li>
-    <li><a href="#進度條progress-bar">進度條（Progress Bar）</a>
-      <ul>
-        <li><a href="#固定進度條">固定進度條</a></li>
-        <li><a href="#非恆定進度條">非恆定進度條</a></li>
-      </ul>
-    </li>
-    <li><a href="#骨架載入畫面skeleton-screen">骨架載入畫面（Skeleton Screen）</a></li>
-    <li><a href="#結論">結論</a></li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    目錄
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#旋轉載入動畫spinner">旋轉載入動畫（Spinner）</a>
-      <ul>
-        <li><a href="#旋轉載入器簡單">旋轉載入器（簡單）</a></li>
-        <li><a href="#旋轉載入器進階">旋轉載入器（進階）</a></li>
-      </ul>
-    </li>
-    <li><a href="#進度條progress-bar">進度條（Progress Bar）</a>
-      <ul>
-        <li><a href="#固定進度條">固定進度條</a></li>
-        <li><a href="#非恆定進度條">非恆定進度條</a></li>
-      </ul>
-    </li>
-    <li><a href="#骨架載入畫面skeleton-screen">骨架載入畫面（Skeleton Screen）</a></li>
-    <li><a href="#結論">結論</a></li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
-      
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-
-        
-
-
-        <div class="article-content max-w-prose mb-20">
-          
-
-<p>在做網頁時，常常不知道該用哪種載入畫面，或是根本不清楚怎麼實作。</p>
-<p>本文將整理幾種常見的載入動畫，並分析它們的優缺點，讓你方便在網頁中運用。</p>
-
-
-<h2 class="relative group">旋轉載入動畫（Spinner） 
-    <div id="%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%8B%95%E7%95%ABspinner" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%8B%95%E7%95%ABspinner" aria-label="定位點">#</a>
-    </span>        
-    
-</h2>
-<p>這應該是最常見的載入畫面了，在很多地方都適用，也不會過度花俏。</p>
-<p>其實光旋轉載入動畫就有很多種類型，接下來我來介紹幾種常見的旋轉動畫。</p>
-
-
-
-
-
-<div
-        
-class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"
->
-
-<span
-        
-class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"
->
-
-
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM191.4 .0132C89.44 .3257 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.61 288.9-.2837 191.4 .0132zM192 96.01c-44.13 0-80 35.89-80 79.1C112 184.8 104.8 192 96 192S80 184.8 80 176c0-61.76 50.25-111.1 112-111.1c8.844 0 16 7.159 16 16S200.8 96.01 192 96.01z"/></svg>
-
-  </span>
-
-
-</span>
-
-<span
-        
-class="dark:text-neutral-300"
-><p>如果想要讓你的載入動畫顯示在頁面的最上方，可以使用這樣的CSS：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/*設定高度、位置*/</span>
-</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">vw</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">z-index</span><span class="p">:</span> <span class="mi">1000</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/*置中*/</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/*設定背景黑色*/</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>然後在套用container的class到你要的元件上就好了：</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="固定在最上方的Spinner" src="https://codepen.io/Pront-lin/embed/raOzgZd?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-See the Pen <a href="https://codepen.io/Pront-lin/pen/raOzgZd">
-固定在最上方的Spinner</a> by Pront (<a href="https://codepen.io/Pront-lin">@Pront-lin</a>)
-on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-</span>
-</div>
-
-
-
-<h3 class="relative group">旋轉載入器（簡單） 
-    <div id="%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E7%B0%A1%E5%96%AE" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E7%B0%A1%E5%96%AE" aria-label="定位點">#</a>
-    </span>        
-    
-</h3>
-<p>這是最簡單的載入動畫了，只需要幫一個圓形套用旋轉動畫就好了。</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="旋轉加載器" src="https://codepen.io/Pront-lin/embed/pvjrMmg?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/Pront-lin/pen/pvjrMmg">
-  旋轉加載器</a> by Pront (<a href="https://codepen.io/Pront-lin">@Pront-lin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-<p>首先先畫一個圓形：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">spinner</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 確保不會自動換行 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 設定大小 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">min-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">min-height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* border設定1/4藍色 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#c4dfff</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-top-color</span><span class="p">:</span> <span class="mh">#639dff</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 設定圓形 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>然後再套入旋轉動畫：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">spinner</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 確保不會自動換行 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 設定大小 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">min-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">min-height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* border設定1/4籃色 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#c4dfff</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-top-color</span><span class="p">:</span> <span class="mh">#639dff</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 設定圓形 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation</span><span class="p">:</span> <span class="n">spin</span> <span class="mi">1</span><span class="kt">s</span> <span class="kc">linear</span> <span class="kc">infinite</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">keyframes</span> <span class="nt">spin</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">360</span><span class="kt">deg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>就可以直接在html套用了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;spinner&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>這個動畫的優點就是製作超簡單，效果也不錯，不過比較單調一點。</p>
-
-
-<h3 class="relative group">旋轉載入器（進階） 
-    <div id="%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E9%80%B2%E9%9A%8E" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E9%80%B2%E9%9A%8E" aria-label="定位點">#</a>
-    </span>        
-    
-</h3>
-<p>這是一個符合<a href="https://m3.material.io/" target="_blank">Google Material Design</a>
-的Loading載入器（如果自己懶的寫程式，也可以直接使用<a href="https://github.com/material-components/material-web/blob/main/docs/components/progress.md" target="_blank">Material Web程式庫</a>
-），這很常可以在Chrome、Youtube以及一些手機軟體中看到，是一個比較進階的旋轉載入器。</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="indeterminate spinner" src="https://codepen.io/Pront-lin/embed/empGdQZ?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/Pront-lin/pen/empGdQZ">
-  indeterminate spinner</a> by Pront (<a href="https://codepen.io/Pront-lin">@Pront-lin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-<p>首先，要先用SVG定義一個圓形：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;svg-spinner&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;0 0 100 100&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;spinner-path&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;40&#34;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#34;none&#34;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#34;6&#34;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#34;#3f51b5&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">&#34;round&#34;</span><span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
-</span></span></code></pre></div><ul>
-<li><code>svg</code>的<code>viewBox</code>代表範圍（從(0,0)開始，寬跟高100，單位是座標）</li>
-<li><code>circle</code>代表圓形，<code>cx</code>跟<code>cy</code>代表x座標跟y座標</li>
-<li><code>fill</code>代表是否填充（在這裡是空心載入器，所以為<code>none</code>）</li>
-<li><code>r</code>代表圓半徑（單位是座標）</li>
-<li><code>stroke-width</code>代表厚度（單位是座標）</li>
-<li><code>stroke</code>代表圖形顏色</li>
-<li><code>stroke-linecap</code>代表線條端點的形狀（這裡設定為圓角）</li>
-</ul>
-<p>這時畫面應該會有一個中空的藍色圓形。</p>
-<p>現在可以設定spinner的高跟寬（設定多少都可以）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">svg-spinner</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>這時就能加入spin動畫了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">svg-spinner</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation</span><span class="p">:</span> <span class="n">spin</span> <span class="mf">1.4</span><span class="kt">s</span> <span class="kc">linear</span> <span class="kc">infinite</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">keyframes</span> <span class="nt">spin</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">360</span><span class="kt">deg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>當然，你現在應該看不到任何的選轉效果，應為目前它只是一個完整的圓（如果不信，可以用檢查功能來看圓是不是真的在轉）。</p>
-<p>接下來來到重點了，為了要讓圖形可以伸長又縮短，要使用<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dasharray" target="_blank">
+<!doctype html><html lang=zh-tw dir=ltr class=scroll-smooth data-default-appearance=light data-auto-appearance=true><head><meta charset=utf-8><meta http-equiv=content-language content="zh-tw"><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>如何製作各種網頁載入畫面 &#183; Pront Change Log</title><meta name=title content="如何製作各種網頁載入畫面 &#183; Pront Change Log"><meta name=keywords content="程式設計,網頁開發,載入畫面,"><link rel=canonical href=https://prontgo.github.io/posts/loading-page-for-web/><link type=text/css rel=stylesheet href=/css/main.bundle.min.82421551593e3284f9a4f2f95236603ba951d240f9094581842944b732b2dfffcf294abc3011346f9af92e7e47f4114928ebf4fc3b1164eb4922f1a9d5e1c2b8.css integrity="sha512-gkIVUVk+MoT5pPL5UjZgO6lR0kD5CUWBhClEtzKy3//PKUq8MBE0b5r5Ln5H9BFJKOv0/DsRZOtJIvGp1eHCuA=="><script type=text/javascript src=/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj+e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script><script defer type=text/javascript id=script-bundle src=/js/main.bundle.min.700c68ced6ecd1ce7e26bb8477435b70302e309815080ee5975c308b2030021fb2febf06550bed73e27b5c8feac2526b9061f74d46ff72d939dad11fcabc5963.js integrity="sha512-cAxoztbs0c5+JruEd0NbcDAuMJgVCA7ll1wwiyAwAh+y/r8GVQvtc+J7XI/qwlJrkGH3TUb/ctk52tEfyrxZYw==" data-copy data-copied></script><script src=/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj+Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta property="og:url" content="https://prontgo.github.io/posts/loading-page-for-web/"><meta property="og:site_name" content="Pront Change Log"><meta property="og:title" content="如何製作各種網頁載入畫面"><meta property="og:locale" content="zh_tw"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-08-10T00:00:00+00:00"><meta property="article:modified_time" content="2025-08-10T00:00:00+00:00"><meta property="article:tag" content="程式設計"><meta property="article:tag" content="網頁開發"><meta property="article:tag" content="載入畫面"><meta property="og:image" content="https://prontgo.github.io/posts/loading-page-for-web/feature.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://prontgo.github.io/posts/loading-page-for-web/feature.jpg"><meta name=twitter:title content="如何製作各種網頁載入畫面"><script type=application/ld+json>[{"@context":"https://schema.org","@type":"Article","articleSection":"Posts","name":"如何製作各種網頁載入畫面","headline":"如何製作各種網頁載入畫面","inLanguage":"zh-tw","url":"https:\/\/prontgo.github.io\/posts\/loading-page-for-web\/","author":{"@type":"Person","name":"Pront"},"copyrightYear":"2025","dateCreated":"2025-08-10T00:00:00\u002b00:00","datePublished":"2025-08-10T00:00:00\u002b00:00","dateModified":"2025-08-10T00:00:00\u002b00:00","keywords":["程式設計","網頁開發","載入畫面"],"mainEntityOfPage":"true","wordCount":"703"}]</script><meta name=author content="Pront"><script src=/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script><link type=text/css rel=stylesheet href=/lib/katex/katex.min.8fee1bb91734542a6701c61b7be516ff2eb2df248bf4e4591aacc8f4e9df40c7ca9e9c0b3f657b166f5f13e69a8fb50a139b3babcef20aeeea18f0fbcd4169fb.css integrity="sha512-j+4buRc0VCpnAcYbe+UW/y6y3ySL9ORZGqzI9OnfQMfKnpwLP2V7Fm9fE+aaj7UKE5s7q87yCu7qGPD7zUFp+w=="><script defer src=/lib/katex/katex.min.8c68eaeb75cfdcfac071717a969e1b9d9230ad52c6a2ac21ff846eaf6a258364cbb79e5e3552e32c280faeb4f4eda4d7c5bd1492e30a961c737e1e5305300281.js integrity="sha512-jGjq63XP3PrAcXF6lp4bnZIwrVLGoqwh/4Rur2olg2TLt55eNVLjLCgPrrT07aTXxb0UkuMKlhxzfh5TBTACgQ=="></script><script defer src=/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac+zBvZzgDJzDQ==" onload=renderMathInElement(document.body)></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-R4HTQPYFHW"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-R4HTQPYFHW")</script><meta name=theme-color></head><body class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600"><div id=the-top class="absolute flex self-center"><a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600" href=#main-content><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>快轉到主要內容</a></div><div style=padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3"><div class="flex flex-1 items-center justify-between"><nav class="flex space-x-3"><a href=/ class="text-base font-medium text-gray-500 hover:text-gray-900">Pront Change Log</a></nav><nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12"><a href=/posts/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=Posts>全部文章</p></a><a href=/search/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=搜尋>搜尋</p></a><a href=/categories/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=Categories>分類</p></a><a href=/tags/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=Tags>標籤</p></a><div class="flex items-center"><button id=appearance-switcher aria-label="Dark mode switcher" type=button class="text-base hover:text-primary-600 dark:hover:text-primary-400"><div class="flex items-center justify-center dark:hidden"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="items-center justify-center hidden dark:flex"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></nav><div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12"><span></span>
+<button id=appearance-switcher-mobile aria-label="Dark mode switcher" type=button class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1"><div class="flex items-center justify-center dark:hidden"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="items-center justify-center hidden dark:flex"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></div><div class="-my-2 md:hidden"><label id=menu-button class=block><div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400"><span class="relative block icon"><svg viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z"/></svg></span></div><div id=menu-wrapper style=padding-top:5px class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50"><ul class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl"><li id=menu-close-button><span class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400"><span class="relative block icon"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></span></li><li class=mt-1><a href=/posts/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=Posts>全部文章</p></a></li><li class=mt-1><a href=/search/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=搜尋>搜尋</p></a></li><li class=mt-1><a href=/categories/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=Categories>分類</p></a></li><li class=mt-1><a href=/tags/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=Tags>標籤</p></a></li></ul></div></label></div></div><script>(function(){var e=$(".main-menu"),t=window.location.pathname;e.find('a[href="'+t+'"]').each(function(e,t){$(t).children("p").addClass("active")})})()</script><div class="relative flex flex-col grow"><main id=main-content class=grow><article><figure><img class="w-full rounded-lg single_hero_round nozoom" alt=如何製作各種網頁載入畫面 width=1200 height=800 src=/posts/loading-page-for-web/feature_hu_ed5fb5bcbad353b.jpg></figure><header id=single_header class="mt-5 max-w-prose"><h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">如何製作各種網頁載入畫面</h1><div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden"><div class="flex flex-row flex-wrap items-center"><time datetime=2025-08-10T00:00:00+00:00>2025年8月10日</time><span class="px-2 text-primary-500">&#183;</span><span>703 字</span><span class="px-2 text-primary-500">&#183;</span><span title=預計閱讀時間>4 分鐘</span></div><div class="flex flex-row flex-wrap items-center"><span style=margin-top:.5rem class=mr-2 onclick='return window.open("/categories/%E7%B6%B2%E9%A0%81%E9%96%8B%E7%99%BC/","_self"),!1'><span class=flex style=cursor:pointer><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">網頁開發
+</span></span></span><span style=margin-top:.5rem class=mr-2 onclick='return window.open("/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/","_self"),!1'><span class=flex style=cursor:pointer><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">程式設計
+</span></span></span><span style=margin-top:.5rem class=mr-2 onclick='return window.open("/tags/%E7%B6%B2%E9%A0%81%E9%96%8B%E7%99%BC/","_self"),!1'><span class=flex style=cursor:pointer><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">網頁開發
+</span></span></span><span style=margin-top:.5rem class=mr-2 onclick='return window.open("/tags/%E8%BC%89%E5%85%A5%E7%95%AB%E9%9D%A2/","_self"),!1'><span class=flex style=cursor:pointer><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">載入畫面</span></span></span></div></div><div class="flex author"><img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width=96 height=96 alt=Pront src=/me_hu_759e6afa3b72bfc.jpeg><div class=place-self-center><div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">作者</div><div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">Pront</div><div class="text-sm text-neutral-700 dark:text-neutral-400">Hello World🌍!</div><div class="text-2xl sm:text-lg"></div></div></div><div class=mb-5></div><link rel=stylesheet href=/css/article.css></header><section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row"><div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8"><div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10"><details open id=TOCView class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block"><summary class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">目錄</summary><div class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"><nav id=TableOfContents><ul><li><a href=#旋轉載入動畫spinner>旋轉載入動畫（Spinner）</a><ul><li><a href=#旋轉載入器簡單>旋轉載入器（簡單）</a></li><li><a href=#旋轉載入器進階>旋轉載入器（進階）</a></li></ul></li><li><a href=#進度條progress-bar>進度條（Progress Bar）</a><ul><li><a href=#固定進度條>固定進度條</a></li><li><a href=#非恆定進度條>非恆定進度條</a></li></ul></li><li><a href=#骨架載入畫面skeleton-screen>骨架載入畫面（Skeleton Screen）</a></li><li><a href=#結論>結論</a></li></ul></nav></div></details><details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden"><summary class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">目錄</summary><div class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"><nav id=TableOfContents><ul><li><a href=#旋轉載入動畫spinner>旋轉載入動畫（Spinner）</a><ul><li><a href=#旋轉載入器簡單>旋轉載入器（簡單）</a></li><li><a href=#旋轉載入器進階>旋轉載入器（進階）</a></li></ul></li><li><a href=#進度條progress-bar>進度條（Progress Bar）</a><ul><li><a href=#固定進度條>固定進度條</a></li><li><a href=#非恆定進度條>非恆定進度條</a></li></ul></li><li><a href=#骨架載入畫面skeleton-screen>骨架載入畫面（Skeleton Screen）</a></li><li><a href=#結論>結論</a></li></ul></nav></div></details><script>var margin=200,marginError=50;(function(){var t=$(window),e=$("#TOCView"),s=e.height();function n(){var n=t.height()-margin;s>=n?(e.css("overflow-y","scroll"),e.css("max-height",n+marginError+"px")):(e.css("overflow-y","hidden"),e.css("max-height","9999999px"))}t.on("resize",n),$(document).ready(n)})(),function(){var t,e=$("#TableOfContents");if(e.length>0){t=$(window);function n(){var s,o=t.scrollTop(),i=$(".anchor"),n="";if(i.each(function(e,t){t=$(t),t.offset().top-$(window).height()/3<=o&&(n=decodeURIComponent(t.attr("id")))}),s=e.find("a.active"),s.length==1&&s.eq(0).attr("href")=="#"+n)return!0;s.each(function(e,t){$(t).removeClass("active").siblings("ul").hide()}),e.find('a[href="#'+n+'"]').addClass("active"),e.find('a[href="#'+n+'"]').parentsUntil("#TableOfContents").each(function(e,t){$(t).children("a").parents("ul").show()})}t.on("scroll",n),$(document).ready(function(){e.find("a").parent("li").find("ul").hide(),n()})}}()</script></div></div><div class="min-w-0 min-h-0 max-w-fit"><div class="article-content max-w-prose mb-20"><p>在做網頁時，常常不知道該用哪種載入畫面，或是根本不清楚怎麼實作。</p><p>本文將整理幾種常見的載入動畫，並分析它們的優缺點，讓你方便在網頁中運用。</p><h2 class="relative group">旋轉載入動畫（Spinner）<div id=%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%8B%95%E7%95%ABspinner class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%8B%95%E7%95%ABspinner aria-label=定位點>#</a></span></h2><p>這應該是最常見的載入畫面了，在很多地方都適用，也不會過度花俏。</p><p>其實光旋轉載入動畫就有很多種類型，接下來我來介紹幾種常見的旋轉動畫。</p><div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"><span class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"><span class="relative block icon"><svg viewBox="0 0 384 512"><path fill="currentColor" d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438.0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1H112L112.1 454.3zM191.4.0132C89.44.3257 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8 16.53 18.84 42.34 58.23 52.22 91.45.0313.25.0938.5166.125.7823h160.2c.0313-.2656.0938-.5166.125-.7823 9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1 368 78.61 288.9-.2837 191.4.0132zM192 96.01c-44.13.0-80 35.89-80 79.1.0 9.69-7.2 16.89-16 16.89S80 184.8 80 176c0-61.76 50.25-111.1 112-111.1 8.844.0 16 7.159 16 16S200.8 96.01 192 96.01z"/></svg>
+</span></span><span class=dark:text-neutral-300><p>如果想要讓你的載入動畫顯示在頁面的最上方，可以使用這樣的CSS：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/*設定高度、位置*/</span>
+</span></span><span class=line><span class=cl>    <span class=k>position</span><span class=p>:</span> <span class=kc>fixed</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>top</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>left</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>vh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>vw</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>z-index</span><span class=p>:</span> <span class=mi>1000</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/*置中*/</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>align-items</span><span class=p>:</span> <span class=kc>center</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>justify-content</span><span class=p>:</span> <span class=kc>center</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/*設定背景黑色*/</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-color</span><span class=p>:</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>然後在套用container的class到你要的元件上就好了：</p><iframe height=300 style=width:100% scrolling=no title=固定在最上方的Spinner src="https://codepen.io/Pront-lin/embed/raOzgZd?default-tab=result" frameborder=no loading=lazy allowtransparency=true allowfullscreen>See the Pen <a href=https://codepen.io/Pront-lin/pen/raOzgZd>固定在最上方的Spinner</a> by Pront (<a href=https://codepen.io/Pront-lin>@Pront-lin</a>)
+on <a href=https://codepen.io>CodePen</a>.</iframe></span></div><h3 class="relative group">旋轉載入器（簡單）<div id=%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E7%B0%A1%E5%96%AE class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E7%B0%A1%E5%96%AE aria-label=定位點>#</a></span></h3><p>這是最簡單的載入動畫了，只需要幫一個圓形套用旋轉動畫就好了。</p><iframe height=300 style=width:100% scrolling=no title=旋轉加載器 src="https://codepen.io/Pront-lin/embed/pvjrMmg?default-tab=result" frameborder=no loading=lazy allowtransparency=true allowfullscreen>See the Pen <a href=https://codepen.io/Pront-lin/pen/pvjrMmg>旋轉加載器</a> by Pront (<a href=https://codepen.io/Pront-lin>@Pront-lin</a>)
+on <a href=https://codepen.io>CodePen</a>.</iframe><p>首先先畫一個圓形：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>spinner</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 確保不會自動換行 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>inline-block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 設定大小 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>min-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>min-height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* border設定1/4藍色 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>border</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#c4dfff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-top-color</span><span class=p>:</span> <span class=mh>#639dff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 設定圓形 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-radius</span><span class=p>:</span> <span class=mi>50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>然後再套入旋轉動畫：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>spinner</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 確保不會自動換行 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>inline-block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 設定大小 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>min-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>min-height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* border設定1/4籃色 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>border</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#c4dfff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-top-color</span><span class=p>:</span> <span class=mh>#639dff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 設定圓形 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-radius</span><span class=p>:</span> <span class=mi>50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation</span><span class=p>:</span> <span class=n>spin</span> <span class=mi>1</span><span class=kt>s</span> <span class=kc>linear</span> <span class=kc>infinite</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>keyframes</span> <span class=nt>spin</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>0</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>transform</span><span class=p>:</span> <span class=nb>rotate</span><span class=p>(</span><span class=mi>0</span><span class=kt>deg</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nt>100</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>transform</span><span class=p>:</span> <span class=nb>rotate</span><span class=p>(</span><span class=mi>360</span><span class=kt>deg</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>就可以直接在html套用了：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;spinner&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></div><p>這個動畫的優點就是製作超簡單，效果也不錯，不過比較單調一點。</p><h3 class="relative group">旋轉載入器（進階）<div id=%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E9%80%B2%E9%9A%8E class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E6%97%8B%E8%BD%89%E8%BC%89%E5%85%A5%E5%99%A8%E9%80%B2%E9%9A%8E aria-label=定位點>#</a></span></h3><p>這是一個符合<a href=https://m3.material.io/ target=_blank>Google Material Design</a>
+的Loading載入器（如果自己懶的寫程式，也可以直接使用<a href=https://github.com/material-components/material-web/blob/main/docs/components/progress.md target=_blank>Material Web程式庫</a>
+），這很常可以在Chrome、Youtube以及一些手機軟體中看到，是一個比較進階的旋轉載入器。</p><iframe height=300 style=width:100% scrolling=no title="indeterminate spinner" src="https://codepen.io/Pront-lin/embed/empGdQZ?default-tab=result" frameborder=no loading=lazy allowtransparency=true allowfullscreen>See the Pen <a href=https://codepen.io/Pront-lin/pen/empGdQZ>indeterminate spinner</a> by Pront (<a href=https://codepen.io/Pront-lin>@Pront-lin</a>)
+on <a href=https://codepen.io>CodePen</a>.</iframe><p>首先，要先用SVG定義一個圓形：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>svg</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;svg-spinner&#34;</span> <span class=na>viewBox</span><span class=o>=</span><span class=s>&#34;0 0 100 100&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>circle</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;spinner-path&#34;</span> <span class=na>cx</span><span class=o>=</span><span class=s>&#34;50&#34;</span> <span class=na>cy</span><span class=o>=</span><span class=s>&#34;50&#34;</span> <span class=na>r</span><span class=o>=</span><span class=s>&#34;40&#34;</span> <span class=na>fill</span><span class=o>=</span><span class=s>&#34;none&#34;</span> <span class=na>stroke-width</span><span class=o>=</span><span class=s>&#34;6&#34;</span> <span class=na>stroke</span><span class=o>=</span><span class=s>&#34;#3f51b5&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=na>stroke-linecap</span><span class=o>=</span><span class=s>&#34;round&#34;</span><span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>svg</span><span class=p>&gt;</span>
+</span></span></code></pre></div><ul><li><code>svg</code>的<code>viewBox</code>代表範圍（從(0,0)開始，寬跟高100，單位是座標）</li><li><code>circle</code>代表圓形，<code>cx</code>跟<code>cy</code>代表x座標跟y座標</li><li><code>fill</code>代表是否填充（在這裡是空心載入器，所以為<code>none</code>）</li><li><code>r</code>代表圓半徑（單位是座標）</li><li><code>stroke-width</code>代表厚度（單位是座標）</li><li><code>stroke</code>代表圖形顏色</li><li><code>stroke-linecap</code>代表線條端點的形狀（這裡設定為圓角）</li></ul><p>這時畫面應該會有一個中空的藍色圓形。</p><p>現在可以設定spinner的高跟寬（設定多少都可以）：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>svg-spinner</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>這時就能加入spin動畫了：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>svg-spinner</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation</span><span class=p>:</span> <span class=n>spin</span> <span class=mf>1.4</span><span class=kt>s</span> <span class=kc>linear</span> <span class=kc>infinite</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>keyframes</span> <span class=nt>spin</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>0</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>transform</span><span class=p>:</span> <span class=nb>rotate</span><span class=p>(</span><span class=mi>0</span><span class=kt>deg</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nt>100</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>transform</span><span class=p>:</span> <span class=nb>rotate</span><span class=p>(</span><span class=mi>360</span><span class=kt>deg</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>當然，你現在應該看不到任何的選轉效果，應為目前它只是一個完整的圓（如果不信，可以用檢查功能來看圓是不是真的在轉）。</p><p>接下來來到重點了，為了要讓圖形可以伸長又縮短，要使用<a href=https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dasharray target=_blank>
 <code>stroke-dasharray</code></a>
-來處理伸縮，以及使用<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset" target="_blank">
-<code>stroke-dashoffset</code></a>來移動位置。</p>
-<p>先算出圓週長：</p>
-<p>$$
+來處理伸縮，以及使用<a href=https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset target=_blank>
+<code>stroke-dashoffset</code></a>來移動位置。</p><p>先算出圓週長：</p><p>$$
 40 \times 2 \times \pi \approx 251.3
-$$</p>
-<p>這裡的「40」就是在<code>circle</code>裡面所設定的r（半徑）。</p>
-<p>加入伸縮動畫：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">spinner-path</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 套用動畫 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">animation</span><span class="p">:</span> <span class="n">dash</span> <span class="mf">1.4</span><span class="kt">s</span> <span class="kc">ease-in-out</span> <span class="kc">infinite</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">keyframes</span> <span class="nt">dash</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c">/* 先從1 + 251個空格開始（一個點） */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stroke-dasharray</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">251</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stroke-dashoffset</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c">/* 變成125 + 251個空格（1/4圓，超出的空格會被忽略） */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stroke-dasharray</span><span class="p">:</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">251</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="c">/* 空格的開始點往左偏移1/4圓 */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stroke-dashoffset</span><span class="p">:</span> <span class="mf">-62.8</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c">/* 回到原本狀態 */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stroke-dasharray</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">251</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="c">/* 偏移251（回原點）*/</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stroke-dashoffset</span><span class="p">:</span> <span class="mi">-251</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-
-
-
-
-<div
-        
-class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"
->
-
-<span
-        
-class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"
->
-
-
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-</span>
-
-<span
-        
-class="dark:text-neutral-300"
->這裡的<code>stroke-dasharray</code>都是在調整圓的邊顯示多少，第一個數值代表顯示的週長，第二個數值代表隱藏的週長。</span>
-</div>
-
-<br>
-
-
-
-
-
-<div
-        
-class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"
->
-
-<span
-        
-class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"
->
-
-
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-</span>
-
-<span
-        
-class="dark:text-neutral-300"
->這裡的<code>stroke-dashoffset</code>是指說「線的起點偏移」，所以當整個SVG往右時，整個圓形就會往左（因為起點往左偏移），並且拉長。讓圖形看起來像在往右滑動。</span>
-</div>
-
-<p>這樣就完成了這個動畫了，這個動化的優點就是看起來不會像前一個一樣太單調，而且這個動畫也很常見，唯一的缺點就是第一次製作時要花比較久時間（當然使用別人寫好的程式庫可以快很多 ）。</p>
-
-
-<h2 class="relative group">進度條（Progress Bar） 
-    <div id="%E9%80%B2%E5%BA%A6%E6%A2%9Dprogress-bar" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%80%B2%E5%BA%A6%E6%A2%9Dprogress-bar" aria-label="定位點">#</a>
-    </span>        
-    
-</h2>
-<p>有時候做網頁時會需要用到進度條，我這裡要講的進度條不是Windows那種安裝軟體時的進度條，而是切換畫面或是載入東西時的進度條，通常出現在網頁最上方。</p>
-
-
-<h3 class="relative group">固定進度條 
-    <div id="%E5%9B%BA%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%9B%BA%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D" aria-label="定位點">#</a>
-    </span>        
-    
-</h3>
-<p>固定進度條是指說可以用腳本控制進度，而不是像非恆定進度條一樣都不會顯示已經載入到哪裡了，這樣的好處是讓使用者知道加載多少了（不過其實很多進度條都只是假的，都只是給使用者看開心的）。</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="固定進度條" src="https://codepen.io/Pront-lin/embed/myeBmvb?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/Pront-lin/pen/myeBmvb">
-  固定進度條</a> by Pront (<a href="https://codepen.io/Pront-lin">@Pront-lin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-<p>（長的很像Youtube的載入條）</p>
-<p>這個進度條的重點是在JavaScript。</p>
-<p>首先，增加一個進度條：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;progress-bar&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>並且讓進度條置頂：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">progress-bar</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 置頂 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 動畫設定（預設隱藏） */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transform</span><span class="p">:</span> <span class="nf">scalex</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transform-origin</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>為了方便測試，我有寫一個測試用的等待函式（等待1.5到2.5秒）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">resolve</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>先設定2.5秒內到達進度90%：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">handleLoad</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s2">&#34;transform 2.5s ease-out&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&#34;scaleX(0.9)&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 強制刷新 */</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">offsetHeight</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>如果等到加載成功了就直接讓進度條跑完：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">handleLoad</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">    <span class="nx">load</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s2">&#34;transform 0.3s ease-in&#34;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&#34;scaleX(1)&#34;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="cm">/* 強制刷新 */</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nx">bar</span><span class="p">.</span><span class="nx">offsetHeight</span>
-</span></span><span class="line hl"><span class="cl">    <span class="p">})</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s2">&#34;transform 2.5s ease-out&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&#34;scaleX(0.9)&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 強制刷新 */</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">offsetHeight</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>最後在設定跑完之後隱藏progress bar：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">handleLoad</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;.progress-bar&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">load</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s2">&#34;transform 0.3s ease-in&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&#34;scaleX(1)&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">bar</span><span class="p">.</span><span class="nx">offsetHeight</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">            <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span>
-</span></span><span class="line hl"><span class="cl">            <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&#34;scaleX(0)&#34;</span>
-</span></span><span class="line hl"><span class="cl">            <span class="nx">bar</span><span class="p">.</span><span class="nx">offsetHeight</span>
-</span></span><span class="line hl"><span class="cl">        <span class="p">},</span> <span class="p">(</span><span class="mi">1600</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">})</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s2">&#34;transform 2.5s ease-out&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">&#34;scaleX(0.9)&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">bar</span><span class="p">.</span><span class="nx">offsetHeight</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>這樣就完成這個動畫了，這個動畫的優點是切換畫面時很常見，缺點就是可能會卡在90%（如果伺服器一直不回應）。</p>
-
-
-<h3 class="relative group">非恆定進度條 
-    <div id="%E9%9D%9E%E6%81%86%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%9D%9E%E6%81%86%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D" aria-label="定位點">#</a>
-    </span>        
-    
-</h3>
-<p>如果有一個東西跑很久，或是說不知道要執行多久，就可以使用「非恆定進度條」，也就是一直在跑的進度條。</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="非恆定進度條" src="https://codepen.io/Pront-lin/embed/NPGaOEN?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/Pront-lin/pen/NPGaOEN">
-  非恆定進度條</a> by Pront (<a href="https://codepen.io/Pront-lin">@Pront-lin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-<p>首先，先建立一個progress bar：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;progress-bar-container&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;progress-bar&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>接著讓container有淺灰色的背景：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">progress-bar-container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>然後要讓progress bar對齊上方：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">progress-bar-container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="c">/* 讓子元素可以使用父元素作為參考點 */</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="c">/* 防止overflow */</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">progress-bar</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 對齊上方 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 設定大小（高比父容器少1px）*/</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>最後再使用子元素的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/left" target="_blank"><code>left</code></a>來做動畫就可以了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">progress-bar</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="c">/* 設定動畫 */</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-duration</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">s</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-name</span><span class="p">:</span> <span class="kc">progress</span><span class="o">-</span><span class="n">bar</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-iteration-count</span><span class="p">:</span> <span class="kc">infinite</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease-out</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">keyframes</span> <span class="nt">progress-bar</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">left</span><span class="p">:</span> <span class="mi">-50</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">left</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>這個動畫其實也是很常見，而且也不用擔心如何計算載入的百分比，而且比前一個簡單一點（不需要JavaScript）。</p>
-
-
-<h2 class="relative group">骨架載入畫面（Skeleton Screen） 
-    <div id="%E9%AA%A8%E6%9E%B6%E8%BC%89%E5%85%A5%E7%95%AB%E9%9D%A2skeleton-screen" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%AA%A8%E6%9E%B6%E8%BC%89%E5%85%A5%E7%95%AB%E9%9D%A2skeleton-screen" aria-label="定位點">#</a>
-    </span>        
-    
-</h2>
-<p>骨架載入畫面是用來當網頁還在載入時先顯示布局的動畫，建議要在3秒以內載入完成，否則可能會影響使用者體驗。</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="骨架載入畫面" src="https://codepen.io/Pront-lin/embed/ZYbXVXz?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-See the Pen <a href="https://codepen.io/Pront-lin/pen/ZYbXVXz">
-骨架載入畫面</a> by Pront (<a href="https://codepen.io/Pront-lin">@Pront-lin</a>)
-on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-<br>
-
-
-
-
-
-<div
-        
-class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"
->
-
-<span
-        
-class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"
->
-
-
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-</span>
-
-<span
-        
-class="dark:text-neutral-300"
->如果覺的螢幕太小可以到<a href="https://codepen.io/Pront-lin/full/ZYbXVXz" target="_blank">CodePen</a>上觀看</span>
-</div>
-
-<p>第一步就是要設定好Skeleton的布局，像是範例中的布局就是一張圖片、一個標題、三行字：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;skeleton-container&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;skeleton image-skeleton&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;skeleton title-skeleton&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;skeleton text-skeleton&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;skeleton text-skeleton&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;skeleton text-skeleton&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>然後自行加上高度跟寬度：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">image-skeleton</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">title-skeleton</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">350</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">text-skeleton</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">450</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>然後幫skeleton套上背景：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">skeleton</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/*
-</span></span></span><span class="line"><span class="cl"><span class="c">     漸層效果，淺灰色0%~25% -&gt; 
-</span></span></span><span class="line"><span class="cl"><span class="c">     除漸變成更淺的灰色25%~50% -&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c">     逐漸回到回到淺灰色50%~70% -&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c">     繼續維持淺灰色（剩下未設定）70%~100%
-</span></span></span><span class="line"><span class="cl"><span class="c">     */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">90</span><span class="kt">deg</span><span class="p">,</span> <span class="mh">#e0e0e0</span> <span class="mi">25</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#ececec</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#e0e0e0</span> <span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/*讓背景的大小成為原本的4背*/</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-size</span><span class="p">:</span> <span class="mi">400</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/*圓角（可選）*/</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>最後套上動畫：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">skeleton</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">90</span><span class="kt">deg</span><span class="p">,</span> <span class="mh">#e0e0e0</span> <span class="mi">25</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#ececec</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#e0e0e0</span> <span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-size</span><span class="p">:</span> <span class="mi">400</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-name</span><span class="p">:</span> <span class="n">shimmer</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-duration</span><span class="p">:</span> <span class="mi">2</span><span class="kt">s</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-iteration-count</span><span class="p">:</span> <span class="kc">infinite</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">linear</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">keyframes</span> <span class="nt">shimmer</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 先從150%到-150%（加起來要400%）*/</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">background-position</span><span class="p">:</span> <span class="mi">150</span><span class="kt">%</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">background-position</span><span class="p">:</span> <span class="mi">-150</span><span class="kt">%</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>這樣就做完了骨架動畫了，其實有時候也不一定要到套上動畫，就單純的灰色也很常見（Youtube首頁就是這樣），這應該是這裡面中最酷的動畫了。</p>
-
-
-<h2 class="relative group">結論 
-    <div id="%E7%B5%90%E8%AB%96" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%B5%90%E8%AB%96" aria-label="定位點">#</a>
-    </span>        
-    
-</h2>
-<p>有時候載入畫面其實根本不需要靠外部的庫，自己寫也能做到80分像了，不過如果本身用的程式庫就有包括載入畫面，那當然直接用會更快。</p>
-<p>這些的載入畫面我都研究了很久，像是第二個旋轉載入器，我是叫AI生成程式，結果我連<code>svg</code>標籤都看不懂在寫什麼，最後問AI很久，才終於理解（所以你看不懂我寫的也很正常）。</p>
-
-          
-          
-          
-        </div>
-
-        
-
-        
-        
-
-        
-      </div>
-
-      
-      
-        
-        
-          
-          
-        
-      <script>
-        var oid = "views_posts\/loading-page-for-web\/index.md"
-        var oid_likes = "likes_posts\/loading-page-for-web\/index.md"
-      </script>
-      
-      
-      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
-      
-
-    </section>
-  <footer class="pt-8 max-w-prose print:hidden">
-
-    
-
-    
-    
-    <div class="pt-3">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-      <div class="pt-3">
-        <div id="disqus_thread"></div>
-<script>
-    
-
-    
-
-    (function() { 
-    var d = document, s = d.createElement('script');
-    s.src = 'https://pront-change-log.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
-    </div>
-    
-    
-  </footer>
-</article>
-
-      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
-  <a href="#the-top"
-    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="捲動到頁頂" title="捲動到頁頂">
-    &uarr;
-  </a>
-</div>
-    </main><footer id="site-footer" class="py-10 print:hidden">
-  
-  
-    
-  
-  <div class="flex items-center justify-between">
-
-    
-    
-    <p class="text-sm text-neutral-500 dark:text-neutral-400">
-      Copyright © 2025 Pront Lin. All rights reserved.
-    </p>
-    
-
-    
-    
-    <p class="text-xs text-neutral-500 dark:text-neutral-400">
-      
-      
-      以 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 製作
-    </p>
-    
-
-  </div>
-  <script>
-    
-    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
-      margin: 24,
-      background: 'rgba(0,0,0,0.5)',
-      scrollOffset: 0,
-    })
-    
-  </script>
-  
-  
-  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
-  
-  
-</footer>
-
-  </div>
-</body>
-
-</html>
+$$</p><p>這裡的「40」就是在<code>circle</code>裡面所設定的r（半徑）。</p><p>加入伸縮動畫：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>spinner-path</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 套用動畫 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>animation</span><span class=p>:</span> <span class=n>dash</span> <span class=mf>1.4</span><span class=kt>s</span> <span class=kc>ease-in-out</span> <span class=kc>infinite</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>keyframes</span> <span class=nt>dash</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>0</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c>/* 先從1 + 251個空格開始（一個點） */</span>
+</span></span><span class=line><span class=cl>        <span class=n>stroke-dasharray</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>251</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>stroke-dashoffset</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>50</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c>/* 變成125 + 251個空格（1/4圓，超出的空格會被忽略） */</span>
+</span></span><span class=line><span class=cl>        <span class=n>stroke-dasharray</span><span class=p>:</span> <span class=mi>125</span><span class=p>,</span> <span class=mi>251</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c>/* 空格的開始點往左偏移1/4圓 */</span>
+</span></span><span class=line><span class=cl>        <span class=n>stroke-dashoffset</span><span class=p>:</span> <span class=mf>-62.8</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>100</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c>/* 回到原本狀態 */</span>
+</span></span><span class=line><span class=cl>        <span class=n>stroke-dasharray</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>251</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c>/* 偏移251（回原點）*/</span>
+</span></span><span class=line><span class=cl>        <span class=n>stroke-dashoffset</span><span class=p>:</span> <span class=mi>-251</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"><span class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6.0.0 114.6.0 256s114.6 256 256 256 256-114.6 256-256S397.4.0 256 0zm0 128c17.67.0 32 14.33 32 32 0 17.67-14.33 32-32 32s-32-14.3-32-32 14.3-32 32-32zm40 256h-80c-13.2.0-24-10.7-24-24s10.75-24 24-24h16v-64h-8c-13.25.0-24-10.75-24-24s10.8-24 24-24h32c13.25.0 24 10.75 24 24v88h16c13.25.0 24 10.75 24 24s-10.7 24-24 24z"/></svg>
+</span></span><span class=dark:text-neutral-300>這裡的<code>stroke-dasharray</code>都是在調整圓的邊顯示多少，第一個數值代表顯示的週長，第二個數值代表隱藏的週長。</span></div><br><div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"><span class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6.0.0 114.6.0 256s114.6 256 256 256 256-114.6 256-256S397.4.0 256 0zm0 128c17.67.0 32 14.33 32 32 0 17.67-14.33 32-32 32s-32-14.3-32-32 14.3-32 32-32zm40 256h-80c-13.2.0-24-10.7-24-24s10.75-24 24-24h16v-64h-8c-13.25.0-24-10.75-24-24s10.8-24 24-24h32c13.25.0 24 10.75 24 24v88h16c13.25.0 24 10.75 24 24s-10.7 24-24 24z"/></svg>
+</span></span><span class=dark:text-neutral-300>這裡的<code>stroke-dashoffset</code>是指說「線的起點偏移」，所以當整個SVG往右時，整個圓形就會往左（因為起點往左偏移），並且拉長。讓圖形看起來像在往右滑動。</span></div><p>這樣就完成了這個動畫了，這個動化的優點就是看起來不會像前一個一樣太單調，而且這個動畫也很常見，唯一的缺點就是第一次製作時要花比較久時間（當然使用別人寫好的程式庫可以快很多 ）。</p><h2 class="relative group">進度條（Progress Bar）<div id=%E9%80%B2%E5%BA%A6%E6%A2%9Dprogress-bar class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E9%80%B2%E5%BA%A6%E6%A2%9Dprogress-bar aria-label=定位點>#</a></span></h2><p>有時候做網頁時會需要用到進度條，我這裡要講的進度條不是Windows那種安裝軟體時的進度條，而是切換畫面或是載入東西時的進度條，通常出現在網頁最上方。</p><h3 class="relative group">固定進度條<div id=%E5%9B%BA%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E5%9B%BA%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D aria-label=定位點>#</a></span></h3><p>固定進度條是指說可以用腳本控制進度，而不是像非恆定進度條一樣都不會顯示已經載入到哪裡了，這樣的好處是讓使用者知道加載多少了（不過其實很多進度條都只是假的，都只是給使用者看開心的）。</p><iframe height=300 style=width:100% scrolling=no title=固定進度條 src="https://codepen.io/Pront-lin/embed/myeBmvb?default-tab=result" frameborder=no loading=lazy allowtransparency=true allowfullscreen>See the Pen <a href=https://codepen.io/Pront-lin/pen/myeBmvb>固定進度條</a> by Pront (<a href=https://codepen.io/Pront-lin>@Pront-lin</a>)
+on <a href=https://codepen.io>CodePen</a>.</iframe><p>（長的很像Youtube的載入條）</p><p>這個進度條的重點是在JavaScript。</p><p>首先，增加一個進度條：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;progress-bar&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></div><p>並且讓進度條置頂：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>progress-bar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 置頂 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>top</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>left</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>3</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 動畫設定（預設隱藏） */</span>
+</span></span><span class=line><span class=cl>    <span class=k>transform</span><span class=p>:</span> <span class=nf>scalex</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>transform-origin</span><span class=p>:</span> <span class=kc>left</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>為了方便測試，我有寫一個測試用的等待函式（等待1.5到2.5秒）：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>load</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>resolve</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=p>(</span><span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>()</span> <span class=o>+</span> <span class=mf>1.5</span><span class=p>)</span> <span class=o>*</span> <span class=mi>1000</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>先設定2.5秒內到達進度90%：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>handleLoad</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transition</span> <span class=o>=</span> <span class=s2>&#34;transform 2.5s ease-out&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span> <span class=s2>&#34;scaleX(0.9)&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=cm>/* 強制刷新 */</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>offsetHeight</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>如果等到加載成功了就直接讓進度條跑完：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>handleLoad</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class="line hl"><span class=cl>    <span class=nx>load</span><span class=p>().</span><span class=nx>then</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class="line hl"><span class=cl>        <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transition</span> <span class=o>=</span> <span class=s2>&#34;transform 0.3s ease-in&#34;</span>
+</span></span><span class="line hl"><span class=cl>        <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span> <span class=s2>&#34;scaleX(1)&#34;</span>
+</span></span><span class="line hl"><span class=cl>        <span class=cm>/* 強制刷新 */</span>
+</span></span><span class="line hl"><span class=cl>        <span class=nx>bar</span><span class=p>.</span><span class=nx>offsetHeight</span>
+</span></span><span class="line hl"><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transition</span> <span class=o>=</span> <span class=s2>&#34;transform 2.5s ease-out&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span> <span class=s2>&#34;scaleX(0.9)&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=cm>/* 強制刷新 */</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>offsetHeight</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>最後在設定跑完之後隱藏progress bar：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>handleLoad</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>bar</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.progress-bar&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>load</span><span class=p>().</span><span class=nx>then</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transition</span> <span class=o>=</span> <span class=s2>&#34;transform 0.3s ease-in&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span> <span class=s2>&#34;scaleX(1)&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>bar</span><span class=p>.</span><span class=nx>offsetHeight</span>
+</span></span><span class="line hl"><span class=cl>        <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class="line hl"><span class=cl>            <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transition</span> <span class=o>=</span> <span class=s2>&#34;none&#34;</span>
+</span></span><span class="line hl"><span class=cl>            <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span> <span class=s2>&#34;scaleX(0)&#34;</span>
+</span></span><span class="line hl"><span class=cl>            <span class=nx>bar</span><span class=p>.</span><span class=nx>offsetHeight</span>
+</span></span><span class="line hl"><span class=cl>        <span class=p>},</span> <span class=p>(</span><span class=mi>1600</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transition</span> <span class=o>=</span> <span class=s2>&#34;transform 2.5s ease-out&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span> <span class=s2>&#34;scaleX(0.9)&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>bar</span><span class=p>.</span><span class=nx>offsetHeight</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>這樣就完成這個動畫了，這個動畫的優點是切換畫面時很常見，缺點就是可能會卡在90%（如果伺服器一直不回應）。</p><h3 class="relative group">非恆定進度條<div id=%E9%9D%9E%E6%81%86%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E9%9D%9E%E6%81%86%E5%AE%9A%E9%80%B2%E5%BA%A6%E6%A2%9D aria-label=定位點>#</a></span></h3><p>如果有一個東西跑很久，或是說不知道要執行多久，就可以使用「非恆定進度條」，也就是一直在跑的進度條。</p><iframe height=300 style=width:100% scrolling=no title=非恆定進度條 src="https://codepen.io/Pront-lin/embed/NPGaOEN?default-tab=result" frameborder=no loading=lazy allowtransparency=true allowfullscreen>See the Pen <a href=https://codepen.io/Pront-lin/pen/NPGaOEN>非恆定進度條</a> by Pront (<a href=https://codepen.io/Pront-lin>@Pront-lin</a>)
+on <a href=https://codepen.io>CodePen</a>.</iframe><p>首先，先建立一個progress bar：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;progress-bar-container&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;progress-bar&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></div><p>接著讓container有淺灰色的背景：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>progress-bar-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>background</span><span class=p>:</span> <span class=mh>#eee</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>然後要讓progress bar對齊上方：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>progress-bar-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>background</span><span class=p>:</span> <span class=mh>#eee</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=c>/* 讓子元素可以使用父元素作為參考點 */</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=c>/* 防止overflow */</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>overflow</span><span class=p>:</span> <span class=kc>hidden</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>progress-bar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 對齊上方 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>top</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 設定大小（高比父容器少1px）*/</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>3</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>最後再使用子元素的<a href=https://developer.mozilla.org/en-US/docs/Web/CSS/left target=_blank><code>left</code></a>來做動畫就可以了：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>progress-bar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>top</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>3</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=c>/* 設定動畫 */</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-duration</span><span class=p>:</span> <span class=mf>1.5</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-name</span><span class=p>:</span> <span class=kc>progress</span><span class=o>-</span><span class=n>bar</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-iteration-count</span><span class=p>:</span> <span class=kc>infinite</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-timing-function</span><span class=p>:</span> <span class=kc>ease-out</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>keyframes</span> <span class=nt>progress-bar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>0</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>left</span><span class=p>:</span> <span class=mi>-50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nt>100</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>left</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>這個動畫其實也是很常見，而且也不用擔心如何計算載入的百分比，而且比前一個簡單一點（不需要JavaScript）。</p><h2 class="relative group">骨架載入畫面（Skeleton Screen）<div id=%E9%AA%A8%E6%9E%B6%E8%BC%89%E5%85%A5%E7%95%AB%E9%9D%A2skeleton-screen class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E9%AA%A8%E6%9E%B6%E8%BC%89%E5%85%A5%E7%95%AB%E9%9D%A2skeleton-screen aria-label=定位點>#</a></span></h2><p>骨架載入畫面是用來當網頁還在載入時先顯示布局的動畫，建議要在3秒以內載入完成，否則可能會影響使用者體驗。</p><iframe height=300 style=width:100% scrolling=no title=骨架載入畫面 src="https://codepen.io/Pront-lin/embed/ZYbXVXz?default-tab=result" frameborder=no loading=lazy allowtransparency=true allowfullscreen>See the Pen <a href=https://codepen.io/Pront-lin/pen/ZYbXVXz>骨架載入畫面</a> by Pront (<a href=https://codepen.io/Pront-lin>@Pront-lin</a>)
+on <a href=https://codepen.io>CodePen</a>.</iframe><br><div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900 items-start"><span class="text-primary-400 ltr:pr-3 rtl:pl-3 mt-1"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6.0.0 114.6.0 256s114.6 256 256 256 256-114.6 256-256S397.4.0 256 0zm0 128c17.67.0 32 14.33 32 32 0 17.67-14.33 32-32 32s-32-14.3-32-32 14.3-32 32-32zm40 256h-80c-13.2.0-24-10.7-24-24s10.75-24 24-24h16v-64h-8c-13.25.0-24-10.75-24-24s10.8-24 24-24h32c13.25.0 24 10.75 24 24v88h16c13.25.0 24 10.75 24 24s-10.7 24-24 24z"/></svg>
+</span></span><span class=dark:text-neutral-300>如果覺的螢幕太小可以到<a href=https://codepen.io/Pront-lin/full/ZYbXVXz target=_blank>CodePen</a>上觀看</span></div><p>第一步就是要設定好Skeleton的布局，像是範例中的布局就是一張圖片、一個標題、三行字：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;skeleton-container&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;skeleton image-skeleton&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;skeleton title-skeleton&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;skeleton text-skeleton&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;skeleton text-skeleton&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;skeleton text-skeleton&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></div><p>然後自行加上高度跟寬度：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>image-skeleton</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>500</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>300</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>title-skeleton</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>margin</span><span class=p>:</span> <span class=mi>25</span><span class=kt>px</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>350</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>text-skeleton</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>margin</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>30</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>450</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>然後幫skeleton套上背景：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>skeleton</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/*
+</span></span></span><span class=line><span class=cl><span class=c>     漸層效果，淺灰色0%~25% -&gt; 
+</span></span></span><span class=line><span class=cl><span class=c>     除漸變成更淺的灰色25%~50% -&gt;
+</span></span></span><span class=line><span class=cl><span class=c>     逐漸回到回到淺灰色50%~70% -&gt;
+</span></span></span><span class=line><span class=cl><span class=c>     繼續維持淺灰色（剩下未設定）70%~100%
+</span></span></span><span class=line><span class=cl><span class=c>     */</span>
+</span></span><span class=line><span class=cl>    <span class=k>background</span><span class=p>:</span> <span class=nb>linear-gradient</span><span class=p>(</span><span class=mi>90</span><span class=kt>deg</span><span class=p>,</span> <span class=mh>#e0e0e0</span> <span class=mi>25</span><span class=kt>%</span><span class=p>,</span> <span class=mh>#ececec</span> <span class=mi>50</span><span class=kt>%</span><span class=p>,</span> <span class=mh>#e0e0e0</span> <span class=mi>75</span><span class=kt>%</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=c>/*讓背景的大小成為原本的4背*/</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-size</span><span class=p>:</span> <span class=mi>400</span><span class=kt>%</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c>/*圓角（可選）*/</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-radius</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>最後套上動畫：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>skeleton</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>background</span><span class=p>:</span> <span class=nb>linear-gradient</span><span class=p>(</span><span class=mi>90</span><span class=kt>deg</span><span class=p>,</span> <span class=mh>#e0e0e0</span> <span class=mi>25</span><span class=kt>%</span><span class=p>,</span> <span class=mh>#ececec</span> <span class=mi>50</span><span class=kt>%</span><span class=p>,</span> <span class=mh>#e0e0e0</span> <span class=mi>75</span><span class=kt>%</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>background-size</span><span class=p>:</span> <span class=mi>400</span><span class=kt>%</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-radius</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-name</span><span class=p>:</span> <span class=n>shimmer</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-duration</span><span class=p>:</span> <span class=mi>2</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-iteration-count</span><span class=p>:</span> <span class=kc>infinite</span><span class=p>;</span>
+</span></span><span class="line hl"><span class=cl>    <span class=k>animation-timing-function</span><span class=p>:</span> <span class=kc>linear</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>keyframes</span> <span class=nt>shimmer</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* 先從150%到-150%（加起來要400%）*/</span>
+</span></span><span class=line><span class=cl>    <span class=nt>0</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>background-position</span><span class=p>:</span> <span class=mi>150</span><span class=kt>%</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nt>100</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>background-position</span><span class=p>:</span> <span class=mi>-150</span><span class=kt>%</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>這樣就做完了骨架動畫了，其實有時候也不一定要到套上動畫，就單純的灰色也很常見（Youtube首頁就是這樣），這應該是這裡面中最酷的動畫了。</p><h2 class="relative group">結論<div id=%E7%B5%90%E8%AB%96 class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line:none !important" href=#%E7%B5%90%E8%AB%96 aria-label=定位點>#</a></span></h2><p>有時候載入畫面其實根本不需要靠外部的庫，自己寫也能做到80分像了，不過如果本身用的程式庫就有包括載入畫面，那當然直接用會更快。</p><p>這些的載入畫面我都研究了很久，像是第二個旋轉載入器，我是叫AI生成程式，結果我連<code>svg</code>標籤都看不懂在寫什麼，最後問AI很久，才終於理解（所以你看不懂我寫的也很正常）。</p></div></div><script>var oid="views_posts/loading-page-for-web/index.md",oid_likes="likes_posts/loading-page-for-web/index.md"</script><script type=text/javascript src=/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q+oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script></section><footer class="pt-8 max-w-prose print:hidden"><div class=pt-3><hr class="border-dotted border-neutral-300 dark:border-neutral-600"><div class=pt-3><div id=disqus_thread></div><script>(function(){var e=document,t=e.createElement("script");t.src="https://pront-change-log.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)})()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></div></footer></article><div id=top-scroller class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0"><a href=#the-top class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400" aria-label=捲動到頁頂 title=捲動到頁頂>&uarr;</a></div></main><footer id=site-footer class="py-10 print:hidden"><div class="flex items-center justify-between"><p class="text-sm text-neutral-500 dark:text-neutral-400">Copyright © 2025 Pront Lin. All rights reserved.</p><p class="text-xs text-neutral-500 dark:text-neutral-400">以 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://gohugo.io/ target=_blank rel="noopener noreferrer">Hugo</a> & <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://blowfish.page/ target=_blank rel="noopener noreferrer">Blowfish</a> 製作</p></div><script>mediumZoom(document.querySelectorAll("img:not(.nozoom)"),{margin:24,background:"rgba(0,0,0,0.5)",scrollOffset:0})</script><script type=text/javascript src=/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh+sCQ0E53ghYrxgYqw+0GCRyIEpA=="></script></footer></div></body></html>
